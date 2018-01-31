@@ -11,5 +11,6 @@ namespace RohrerDuffyAssignment2.Models
         public string Title { get; set;}
         public string Description { get; set; }
         public string Activities { get; set; }
+        //change
     }
 }
