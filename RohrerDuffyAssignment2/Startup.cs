@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using RohrerDuffyAssignment2.Models;
 
 namespace RohrerDuffyAssignment2
 {
@@ -22,6 +24,9 @@ namespace RohrerDuffyAssignment2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddDbContext<RohrerDuffyAssignment2Context>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("RohrerDuffyAssignment2Context")));
         }
 
         //comment
