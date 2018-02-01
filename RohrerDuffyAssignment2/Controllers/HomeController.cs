@@ -29,7 +29,7 @@ namespace RohrerDuffyAssignment2.Controllers
         }
 
         // GET: Members/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> MemberDetails(int? id)
         {
             if (id == null)
             {
@@ -45,16 +45,33 @@ namespace RohrerDuffyAssignment2.Controllers
 
             return View(member);
         }
-        
-        public IActionResult MemberView()
+        public async Task<IActionResult> MemberView()
         {
-            return View();
+            return View(await _context.Project.ToListAsync());
         }
-        public IActionResult ClientView()
+        // GET: Projects
+        public async Task<IActionResult> ClientView()
         {
-            return View();
+            return View(await _context.Project.ToListAsync());
         }
 
+        // GET: Projects/Details/5
+        public async Task<IActionResult> ProjectDetails(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var project = await _context.Project
+                .SingleOrDefaultAsync(m => m.ProjectID == id);
+            if (project == null)
+            {
+                return NotFound();
+            }
+
+            return View(project);
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
