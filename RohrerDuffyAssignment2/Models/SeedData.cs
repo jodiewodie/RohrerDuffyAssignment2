@@ -14,7 +14,7 @@ namespace RohrerDuffyAssignment2.Models
             using (var context = new RohrerDuffyAssignment2Context(
                 serviceProvider.GetRequiredService<DbContextOptions<RohrerDuffyAssignment2Context>>()))
             {
-                // Look for any movies.
+                // Look for any Admins.
                 if (context.Admin.Any())
                 {
                     return;   // DB has been seeded

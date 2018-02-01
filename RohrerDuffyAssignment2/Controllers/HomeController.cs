@@ -14,6 +14,18 @@ namespace RohrerDuffyAssignment2.Controllers
         {
             return View();
         }
+        public IActionResult MemberView()
+        {
+            return View();
+        }
+        public IActionResult ClientView()
+        {
+            return View();
+        }
+        public IActionResult AdminView()
+        {
+            return View();
+        }
 
         public IActionResult About()
         {
