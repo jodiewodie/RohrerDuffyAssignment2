@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RohrerDuffyAssignment2.Models;
 
 namespace RohrerDuffyAssignment2.Controllers
@@ -14,15 +15,42 @@ namespace RohrerDuffyAssignment2.Controllers
         {
             return View();
         }
+        private readonly RohrerDuffyAssignment2Context _context;
+
+        public HomeController(RohrerDuffyAssignment2Context context)
+        {
+            _context = context;
+        }
+
+        // GET: Members
+        public async Task<IActionResult> AdminView()
+        {
+            return View(await _context.Member.ToListAsync());
+        }
+
+        // GET: Members/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var member = await _context.Member
+                .SingleOrDefaultAsync(m => m.ID == id);
+            if (member == null)
+            {
+                return NotFound();
+            }
+
+            return View(member);
+        }
+        
         public IActionResult MemberView()
         {
             return View();
         }
         public IActionResult ClientView()
-        {
-            return View();
-        }
-        public IActionResult AdminView()
         {
             return View();
         }
