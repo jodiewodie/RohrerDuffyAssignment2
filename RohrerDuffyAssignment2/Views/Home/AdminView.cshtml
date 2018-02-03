@@ -1,9 +1,10 @@
 ﻿@model IEnumerable<RohrerDuffyAssignment2.Models.Member>
 
 @{
-    ViewData["Title"] = "AdminView";
+    ViewData["Title"] = "Admin";
 }
 
-<h2>AdminView</h2>
-<button asp-controller="Members" asp-action="Index" type="button" class="btn btn-info">Manage Users</button>
-<button asp-controller="Projects" asp-action="Index" type="button" class="btn btn-info">Manage Projects</button>
+<h2>Administrator</h2>
+<p>Manage users and projects within Coding Club</p>
+<a asp-controller="Members" asp-action="Index" class="btn btn-info">Manage Users</a>
+<a asp-controller="Projects" asp-action="Index" class="btn btn-info">Manage Projects</a>

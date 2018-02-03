@@ -1,14 +1,12 @@
 ﻿@model IEnumerable<RohrerDuffyAssignment2.Models.Project>
 
 @{
-    ViewData["Title"] = "MemberView";
+    ViewData["Title"] = "Member";
 }
 
-<h2>MemberView</h2>
+<h2>Welcome, member.</h2>
+<p>View your project and edit your activities</p>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -37,9 +35,8 @@
                 @Html.DisplayFor(modelItem => item.Activities)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProjectID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProjectID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProjectID">Delete</a>
+                <a asp-controller="Projects" asp-action="Edit" asp-route-id="@item.ProjectID">Edit</a> |
+                <a asp-controller="Projects" asp-action="Details" asp-route-id="@item.ProjectID">Details</a>
             </td>
         </tr>
 }

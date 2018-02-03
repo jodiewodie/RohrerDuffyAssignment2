@@ -45,10 +45,12 @@ namespace RohrerDuffyAssignment2.Controllers
 
             return View(member);
         }
+
         public async Task<IActionResult> MemberView()
         {
             return View(await _context.Project.ToListAsync());
         }
+
         // GET: Projects
         public async Task<IActionResult> ClientView()
         {

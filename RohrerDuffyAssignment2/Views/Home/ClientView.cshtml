@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<RohrerDuffyAssignment2.Models.Project>
 
 @{
-    ViewData["Title"] = "ClientView";
+    ViewData["Title"] = "Client";
 }
 
 <h2>ClientView</h2>
@@ -37,7 +37,7 @@
                 @Html.DisplayFor(modelItem => item.Activities)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.ProjectID">Details</a>
+                <a asp-controller="Projects" asp-action="Details" asp-route-id="@item.ProjectID">Details</a>
             </td>
         </tr>
 }
