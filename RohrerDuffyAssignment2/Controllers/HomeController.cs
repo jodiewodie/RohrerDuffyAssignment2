@@ -23,9 +23,9 @@ namespace RohrerDuffyAssignment2.Controllers
         }
 
         // GET: Members
-        public async Task<IActionResult> AdminView()
+        public IActionResult AdminView()
         {
-            return View(await _context.Member.ToListAsync());
+            return View();
         }
 
         // GET: Members/Details/5
